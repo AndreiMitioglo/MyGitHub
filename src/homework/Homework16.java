@@ -7,13 +7,13 @@ import java.util.List;
 public class Homework16 {
 
     /*
-    Requirement:
-Write a method countWords() that takes a String as an argument, and returns how many words there are in the the given String
+            Requirement:
+        Write a method countWords() that takes a String as an argument, and returns how many words there are in the the given String
 
-Test data 1:
-String str = “      Java is fun       ”;
-Expected output 1:
-3
+        Test data 1:
+        String str = “      Java is fun       ”;
+    Expected output 1:
+    3
      */
 
     public static int countWords(String str) {
@@ -27,12 +27,12 @@ Expected output 1:
     }
 
 /* Task -2
-Requirement:
-Write a method countA() that takes a String as an argument, and returns how many A or a there are in the the given String
+    Requirement:
+    Write a method countA() that takes a String as an argument, and returns how many A or a there are in the the given String
 
-Test data 1:
-String str = “TechGlobal is a QA bootcamp”;
-Expected output 1:
+    Test data 1:
+    String str = “TechGlobal is a QA bootcamp”;
+    Expected output 1:
 
  */
 
@@ -48,11 +48,11 @@ Expected output 1:
     }
 
 /* Task - 3
-Requirement:
-Write a method countPos() that takes an ArrayList of Integer as an argument, and returns how many elements are positive
+    Requirement:
+    Write a method countPos() that takes an ArrayList of Integer as an argument, and returns how many elements are positive
 
-Test data 1:
-[-45, 0, 0, 34, 5, 67]
+    Test data 1:
+    [-45, 0, 0, 34, 5, 67]
 
  */
 
@@ -66,11 +66,11 @@ Test data 1:
 
     // Task-4
 /*
-Requirement:
-Write a method removeDuplicateNumbers() that takes an ArrayList of Integer as an argument, and returns it back with removed duplicates
+    Requirement:
+    Write a method removeDuplicateNumbers() that takes an ArrayList of Integer as an argument, and returns it back with removed duplicates
 
-Test data 1:
-[10, 20, 35, 20, 35, 60, 70, 60]
+    Test data 1:
+    [10, 20, 35, 20, 35, 60, 70, 60]
 
  */
 
@@ -86,11 +86,11 @@ Test data 1:
 
     }
     /* Task -5
-    Requirement:
-Write a method removeDuplicateElements() that takes an ArrayList of String as an argument, and returns it back with removed duplicates
+        Requirement:
+    Write a method removeDuplicateElements() that takes an ArrayList of String as an argument, and returns it back with removed duplicates
 
-Test data 1:
-[“java”, “C#”, “ruby”, “JAVA”, “ruby”, “C#”, “C++”]
+    Test data 1:
+    [“java”, “C#”, “ruby”, “JAVA”, “ruby”, “C#”, “C++”]
 
      */
 
@@ -106,11 +106,11 @@ Test data 1:
     }
     
     /* Task - 6
-    Requirement:
-Write a method removeExtraSpaces() that takes a String as an argument, and returns a String with removed extra spaces
+        Requirement:
+    Write a method removeExtraSpaces() that takes a String as an argument, and returns a String with removed extra spaces
 
-Test data 1:
-String str = “   I   am      learning     Java      ”;
+    Test data 1:
+    String str = “   I   am      learning     Java      ”;
 
      */
 
@@ -121,73 +121,79 @@ String str = “   I   am      learning     Java      ”;
      */
 
     public static String removeExtraSpaces(String str) { // not working
-        String[] s1 = str.split(" ");
+        String[] s1 = str.trim().split(" ");
         System.out.println(Arrays.toString(s1));
-        String removedSpace = " ";
+        String removedSpace = "";
         for (String s : s1) {
-            removedSpace += s.trim() + "";
+            if(!s.contains(" "))
+            removedSpace += s + " ";
 
         }
-        return removedSpace; // IamlearningJava
+        return removedSpace; // I am learning Java
     }
 
 
-/*  Task-7
-Requirement:
-Write a method add() that takes 2 int[] arrays as arguments and returns a new array with sum of given arrays elements.
-Test data 1:
-int[] arr1 = {3, 0, 0, 7, 5, 10};
-int[] arr2 = {6, 3, 2};
+    /*  Task-7
+    Requirement:
+    Write a method add() that takes 2 int[] arrays as arguments and returns a new array with sum of given arrays elements.
+    Test data 1:
+    int[] arr1 = {3, 0, 0, 7, 5, 10};
+    int[] arr2 = {6, 3, 2};
 
-Expected output 1:
-[9, 3, 2, 7, 5, 10]
+    Expected output 1:
+    [9, 3, 2, 7, 5, 10]
+
+
 
  */
+    public static int[] add(int[] n1, int[] n2){
 
-    public static int[] add(int[] a, int[] b) {
-        int[] c = new int[Math.max(a.length, b.length)];
-        for (int i = 0; i < Math.max(a.length, b.length); i++) {
-            if (i < Math.min(a.length, b.length)) {
-                c[i] = a[i] + b[i];
-            } else if (a.length > b.length) {
-                c[i] = a[i];
-            } else {
-                c[i] = b[i];
-            }
-
+//        n1[0] += n2[0];
+//        n1[1] += n2[1];
+//        n1[2] += n2[2];
+        for (int i = 0; i < Math.min(n1.length, n2.length); i++) {
+            if (n1.length > n2.length) n1[i] += n2[i];
+            else n2[i] += n1[i];
         }
-        return c;
+
+        return (n1.length > n2.length) ? n1: n2;
     }
+
+
+
+//    public static int[] add(int[] a, int[] b) {
+//        int[] c = new int[Math.max(a.length, b.length)];
+//        for (int i = 0; i < Math.max(a.length, b.length); i++) {
+//            if (i < Math.min(a.length, b.length)) {
+//                c[i] = a[i] + b[i];
+//            } else if (a.length > b.length) {
+//                c[i] = a[i];
+//            } else {
+//                c[i] = b[i];
+//            }
+//
+//        }
+//        return c;
+//    }
 
     /*  Task 8
-    Requirement:
-Write a method findClosestTo10() that takes an int[] array as an argument,
-and returns the closest element to 10 from given array
-Test data 1:
-int[] numbers = {10, -13, 5, 70, 15, 57};
-Expected output 1:
-5
+        Requirement:
+    Write a method findClosestTo10() that takes an int[] array as an argument,
+    and returns the closest element to 10 from given array
+    Test data 1:
+    int[] numbers = {10, -13, 5, 70, 15, 57};
+    Expected output 1:
+    5
 
      */
-    public static int findClosestTo10(int[] numbers) { // not working
-        int closest = 0;
-        int distance = Math.abs(numbers[0] - 10);
-
-        if (distance != 0) {
-
-            for (int i = 1; i < numbers.length; i++) {
-
-                if ((Math.abs(numbers[i] - 10) < distance)  )  {
-                    distance = Math.abs(numbers[i] - 10);
-                    closest = numbers[i];
-                }
-        }
-
-
-            }return closest;
-
-
+    public static int findClosestTo10(int[] arr){
+        int closest = Integer.MAX_VALUE;
+        Arrays.sort(arr);
+        for (int i = 0; i < arr.length; i++) if (arr[i] != 10 && Math.abs(10 - arr[i]) < Math.abs(10 - closest)) closest = arr[i];
+        return closest;
     }
+
+
 
 
 
