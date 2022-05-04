@@ -18,7 +18,7 @@ public class PreDecrementAndPostDecrement {
         int age = 10 * i++; //10 * 5
         System.out.println(age); // 50
 
-        age = 10 * i; // 10 * 6
+        age = 10 * i; // 10 * 6   ffff
         System.out.println(age); // 60
 
         age = 10 * ++i;
