@@ -5,9 +5,8 @@ import utilities.CharacterHelper;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.Scanner;
 
-public class HomeworkR4 {
+public class Homework18 {
 
 
 
