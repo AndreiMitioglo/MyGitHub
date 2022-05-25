@@ -150,11 +150,14 @@ Expected Result 4: false
     public static int middleInt(int a, int b, int c){
         int max = Math.max(a, Math.max(b,c));
         int min = Math.min(a, Math.min(b,c));
+//
+//        if(a != max && a != min) return a;
+//        else if (b != max && b != min) return b;
+//        else return c;
 
-        if(a != max && a != min) return a;
-        else if (b != max && b != min) return b;
-        else return c;
-
+       int[] nums ={a,b,c};
+       Arrays.sort(nums);
+       return nums[1];
 
     }
     /*
@@ -208,18 +211,15 @@ Expected Result 4: false
 
 
     public static int[] arrFactorial(int[] arr){
-        int[] factorial = new int[arr.length];
 
         for (int i=0; i<arr.length; i++){
             int fact = 1;
             for(int j=2; j<= arr[i]; j++){
                 fact *= j;
-
             }
-            factorial[i]= fact;
+            arr[i]= fact;
         }
-        return factorial;
-
+        return arr;
     }
 
 
@@ -243,24 +243,35 @@ Expected Result 4: false
  */
 
     public static String[] categorizeCharacters(String str) {
-        String[] arr1 = new String[3];
-        String letter = "";
-        String digit = "";
-        String special = "";
 
-        for (int i = 0; i < str.length(); i++) {
-            if (Character.isLetter(str.charAt(i))) letter += str.charAt(i);
-            else if (Character.isDigit(str.charAt(i))) digit += str.charAt(i);
-            else if (!(Character.isLetterOrDigit(str.charAt(i)) && Character.isWhitespace(str.charAt(i))))
-                special += str.charAt(i);
-            arr1[0]=letter;
-            arr1[1]=digit;
-            arr1[2]=special;
+        String[] catg = {"", "", ""};
 
+        for (char character : str.toCharArray()) {
+            if (Character.isLetter(character)) catg[0] += character + "";
+            else if (Character.isDigit(character)) catg[1] += character + "";
+            else catg[2] += character + "";
         }
-        return arr1;
 
+        return catg;
     }
+//        String[] arr1 = new String[3];
+//        String letter = "";
+//        String digit = "";
+//        String special = "";
+//
+//        for (int i = 0; i < str.length(); i++) {
+//            if (Character.isLetter(str.charAt(i))) letter += str.charAt(i);
+//            else if (Character.isDigit(str.charAt(i))) digit += str.charAt(i);
+//            else if (!(Character.isLetterOrDigit(str.charAt(i)) && Character.isWhitespace(str.charAt(i))))
+//                special += str.charAt(i);
+//            arr1[0]=letter;
+//            arr1[1]=digit;
+//            arr1[2]=special;
+//
+//        }
+//        return arr1;
+
+
 
 
 
