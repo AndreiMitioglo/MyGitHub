@@ -7,8 +7,8 @@ public class Example03_CheckedException {
         They are also known as compiler time exceptions
          */
 
-        /*
-        FIRST WAY TO HANDLE CHECKED EXCEPTION IS USING try-catch block
+
+      //  FIRST WAY TO HANDLE CHECKED EXCEPTION IS USING try-catch block
         try{
             for (int i = 0; i < 10; i++) {
                 Thread.sleep(1000); // 2 seconds
@@ -19,16 +19,16 @@ public class Example03_CheckedException {
         }
 
 
-         */
 
-        //SECOND WAY IS ADDING EXCEPTION TO THE METHOD SIGNATURE USING throws keyword
-        for (int i = 0; i < 10; i++) {
-            Thread.sleep(1000); // 1 seconds
-            System.out.println(i);
-        }
-
-        Thread.sleep(3000);
-        System.out.println("End of the program!");
+//
+//        //SECOND WAY IS ADDING EXCEPTION TO THE METHOD SIGNATURE USING throws keyword
+//        for (int i = 0; i < 10; i++) {
+//            Thread.sleep(1000); // 1 seconds
+//            System.out.println(i);
+//        }
+//
+//        Thread.sleep(3000);
+//        System.out.println("End of the program!");
 
 
 

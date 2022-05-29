@@ -84,7 +84,14 @@ public class Homework20 {
 
 
   */
-
+ public static int[][] numberAndSquare(int[] arr) {
+     int[][] newArr = new int[arr.length][];
+     for (int i = 0; i < arr.length; i++) {
+         int[] arr1 = {arr[i], arr[i] * arr[i]};
+         newArr[i] = arr1;
+     }
+     return newArr;
+ }
 
     /* TASK 4
     Requirement:
@@ -275,16 +282,24 @@ return reverse;
 
  */
 
-public static ArrayList noXInVariables(ArrayList arr){
+//public static ArrayList noXInVariables(ArrayList arr) {
 
-        for (int i=0; i< arr.size(); i++){
-            if(arr.get(i).toString().contains("x")) arr.remove(arr.get(i));
+//        for (int i=0; i< arr.size(); i++){
+//            if(arr.get(i).toString().toLowerCase().contains("x")) arr.remove(arr.get(i));
+//        }
+//    return arr;
+//
+//    }
+
+    public static ArrayList<String> noXInVariables2 (ArrayList < String > arrayList) {
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i).toLowerCase().contains("x")) {
+                arrayList.set(i, arrayList.get(i).replaceAll("[xX]", ""));
+            }
         }
-    return arr;
-
+        arrayList.removeIf(String::isEmpty);
+        return arrayList;
     }
-
-
 
 
 
@@ -317,7 +332,7 @@ public static ArrayList noXInVariables(ArrayList arr){
 
         ArrayList<String> d= new ArrayList<>();
         d.add("Java");
-        d.add("C#");
+        d.add("Java");
         d.add("C#");
 
 
@@ -335,7 +350,7 @@ public static ArrayList noXInVariables(ArrayList arr){
         a.add("#$%");
         a.add("x");
 
-        System.out.println(noXInVariables(a));
+        //System.out.println(noXInVariables2());
 
     }
 
