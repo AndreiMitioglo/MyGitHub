@@ -93,23 +93,23 @@ public class Homework20 {
      return newArr;
  }
 
-    /* TASK 4
-    Requirement:
--Create a method called containsValue()
--This method will take a String array and a String argument, and it will return a boolean. Search the variable inside of the array and return true if it exists in the array. If it doesn’t exist, return false.
-NOTE: Assume that array size is at least 1.
-NOTE: The method is case-sensitive
+        /* TASK 4
+        Requirement:
+    -Create a method called containsValue()
+    -This method will take a String array and a String argument, and it will return a boolean. Search the variable inside of the array and return true if it exists in the array. If it doesn’t exist, return false.
+    NOTE: Assume that array size is at least 1.
+    NOTE: The method is case-sensitive
 
-Test Data 1: [“abc”, “foo”, “java”], “hello”
-Expected Result 1: false
+    Test Data 1: [“abc”, “foo”, “java”], “hello”
+    Expected Result 1: false
 
-Test Data 2: [“abc”, “def”, “123”], “Abc”
-Expected Result 2: false
+    Test Data 2: [“abc”, “def”, “123”], “Abc”
+    Expected Result 2: false
 
-Test Data 3: [“abc”, “def”, “123”, “Java”, “Hello”], “123”
-Expected Result 3: true
+    Test Data 3: [“abc”, “def”, “123”, “Java”, “Hello”], “123”
+    Expected Result 3: true
 
-Hint: Use binarySearch() for easy solution
+    Hint: Use binarySearch() for easy solution
 
  */
     public static boolean containsValue(String[] array, String argument) {
@@ -129,7 +129,8 @@ Hint: Use binarySearch() for easy solution
     /* Task 5
     Requirement:
     -Create a method called reverseSentence()
-    -This method will take a String argument and it will return a String with changing the place of every word. All words should be in reverse order. Make sure that there are two words inside the sentence at least. If there is no two words return “There is not enough words!”.
+    -This method will take a String argument and it will return a String with changing the place of every word.
+     All words should be in reverse order. Make sure that there are two words inside the sentence at least. If there is no two words return “There is not enough words!”.
 
     NOTE: After you reverse, only first letter must be uppercase and the rest will be lowercase!
 

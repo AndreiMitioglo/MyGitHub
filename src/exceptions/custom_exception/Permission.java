@@ -10,11 +10,11 @@ public class Permission {
     "Age of {age} is not allowed to have driver licence"
  */
 
-    public static void checkAge(int age){
-        if (age >= 16){
+    public static void checkAge(int age) {
+        if (age >= 16) {
             System.out.println("You are allowed to have driver licence");
 
-        }else throw new RuntimeException("Age of {age} is not allowed to have driver licence");
+        } else throw new RuntimeException("Age of {age} is not allowed to have driver licence");
 
 
     }
@@ -32,26 +32,28 @@ public class Permission {
     "The input does not represent any day!!!"
  */
 
-    public static void checkIn(int day){
-    if(day ==1 || day == 7) System.out.println("user is allowed to check in from 10 AM to 5 PM");
-    else if (day < 1 || day > 7) throw new RuntimeException("The input does not represent any day!!!");
-    else System.out.println("user is allowed to check in from 10 AM to 5 PM ");
+    public static void checkIn(int day) {
+        if (day == 1 || day == 7) System.out.println("user is allowed to check in from 10 AM to 5 PM");
+        else if (day < 1 || day > 7) throw new RuntimeException("The input does not represent any day!!!");
+        else System.out.println("user is allowed to check in from 10 AM to 5 PM ");
     }
 
-
-        public static void main(String[] args) {
-            Scanner scan = new Scanner(System.in);
-            System.out.println("Enter you age");
-            int age = scan.nextInt();
-    try{
-            checkAge(age);
-
-        } catch (Exception e){
-        e.printStackTrace();
-    }
-    finally {
-        System.out.println("Your age is " + age);
-    }
-            System.out.println("End of the program");
-    }
+//
+//        public static void main(String[] args) {
+//            Scanner scan = new Scanner(System.in);
+//            System.out.println("Enter you age");
+//            int age = scan.nextInt();
+//            try {
+//                checkAge(age);
+////
+////        } catch (Exception e){
+////        e.printStackTrace();
+////    }
+////    finally {
+////        System.out.println("Your age is " + age);
+////    }
+////            System.out.println("End of the program");
+////    }
+//
+//
 }

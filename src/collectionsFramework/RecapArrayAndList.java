@@ -10,7 +10,7 @@ public class RecapArrayAndList {
  */
         System.out.println(" === int array ====");
 
-        int[] arr = {1,5,7,9,10}; // null is not allowed in array
+        int[] arr = {1,5,7,9,10}; // null is not allowed in int array
         System.out.println(Arrays.toString(arr));
         System.out.println(arr[2]); // 7
 
