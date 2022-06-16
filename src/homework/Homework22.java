@@ -77,5 +77,6 @@ public class Homework22 {
        // System.out.println(fibonacciSeries1(5));
 
         System.out.println(fibonacciSeries2(5));
+
     }
 }
