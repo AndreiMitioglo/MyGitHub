@@ -146,7 +146,21 @@ public class Homework21 {
     return a String which is the count of repeated
     characters in a sequence in the String.
     NOTE: If given String is empty, then return empty String.
-    NOTE: It is case sensitive!!! */
+    NOTE: It is case sensitive!!!
+         Test Data 1: “”
+    Expected Result 1: “”
+
+    Test Data 2: “abc”
+    Expected Result 2: “1a1b1c”
+
+    Test Data 3: “abbcca”
+    Expected Result 3: “1a2b2c1a”
+
+    Test Data 4: “aaAAa”
+    Expected Result 4: “2a2A1a”
+
+
+     */
 
     public static String countSequenceOfCharacters(String str){
         String sequence = "";
