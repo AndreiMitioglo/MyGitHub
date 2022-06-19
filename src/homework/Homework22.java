@@ -1,6 +1,8 @@
 package homework;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Homework22 {
  /*
@@ -101,45 +103,45 @@ public class Homework22 {
         String str = "";
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < b.length; j++) {
-                if ((a[i] != b[j])&& !str.contains(a[i]+"")) str += a[i];
+                if ((a[i] != b[j]) && !str.contains(a[i] + "")) str += a[i];
             }
         }
         int[] c = new int[str.length()];
         for (int i = 0; i < str.length(); i++) {
-            c[i] =Integer.valueOf(i);
+            c[i] = Integer.valueOf(i);
 
         }
         return c;
     }
 
 
-        /*
-        Requirement: TASK 4
-    -Create a method called isPowerOf3()
-    -This method will take an int argument and it will return true if given
-    int argument is equal to 3 power of the X. Otherwise, it will return false.
+    /*
+    Requirement: TASK 4
+-Create a method called isPowerOf3()
+-This method will take an int argument and it will return true if given
+int argument is equal to 3 power of the X. Otherwise, it will return false.
 
 
-    Numbers that are power of 3 = 1, 3, 9, 27, 81, 243….
+Numbers that are power of 3 = 1, 3, 9, 27, 81, 243….
 
-    Test Data 1: 1
-    Expected Result 1: true
+Test Data 1: 1
+Expected Result 1: true
 
-    Test Data 2: 2
-    Expected Result 2: false
+Test Data 2: 2
+Expected Result 2: false
 
-    Test Data 3: 3
-    Expected Result 3: true
+Test Data 3: 3
+Expected Result 3: true
 
-    Test Data 4: 81
-    Expected Result 4: true
+Test Data 4: 81
+Expected Result 4: true
 
-     */
-public static boolean isPowerOf3(int n){
-    if (n==1) return true;
-    return n%3==0;
+ */
+    public static boolean isPowerOf3(int n) {
+        if (n == 1) return true;
+        return n % 3 == 0;
 
-}
+    }
 
 /*
     Requirement: Task 5
@@ -164,26 +166,43 @@ public static boolean isPowerOf3(int n){
     Expected Result 4: 3
  */
 
-    public static int firstDuplicate(int[] a) {
+    public static int firstDuplicate(int[] arr) {
         String str = "";
         int max = Integer.MIN_VALUE;
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 1; j < a.length; j++) {
-                if (((a[i]==a[j]) && (!str.contains(a[j]+""))) && (a[j]>max)){
-                       str += a[j];
-                   }
-                max = a[j];
-                } break;
+        if (arr.length <= 1) return -1;
+        else {
+            for (int i = 0; i < arr.length; i++) {
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (((arr[i] == arr[j])) && (arr[j] > max)) {
+                        str += arr[j];
+                    }
+                    max = arr[j];
+                }
+                break;
             }
-
-
-       return Integer.parseInt(str);
+            return Integer.parseInt(str);
 
         }
 
 
+    }
+/*
+    //TASK 5
+    public static int firstDuplicate(int[] array) {
+        if (array.length <= 1) return -1;
+        else {
 
-
+            ArrayList<Integer> newListWithDuplicate = new ArrayList<>();
+            for (int i = 0; i < list.size(); i++) {//1, 2, 3, 3, 4, 1
+                for (int j = i + 1; j < list.size(); j++) {
+                    if (list.get(i) == list.get(j)) newListWithDuplicate.add(list.get(i));
+                }
+                Collections.sort(newListWithDuplicate);
+            }
+            return newListWithDuplicate.get(newListWithDuplicate.size() - 1);
+        }
+}
+ */
 
 
 
