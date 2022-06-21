@@ -29,10 +29,9 @@ public class Homework22 {
         // 0 1 1 2 3 5
         int n0 = 0, n1 = 1, n2 = 0;
         int[] newArr = new int[n];
-        for (int i = 1; i < n; i++) {
-            newArr[0] = 0;
-            newArr[1] = 1;
-            newArr[i] = n2;
+        for (int i = 1; i < newArr.length; i++) {
+
+            newArr[i] = n1;
             n2 = n0 + n1;
             n0 = n1;
             n1 = n2;
@@ -41,6 +40,51 @@ public class Homework22 {
         return newArr;
 
     }
+
+
+    /*
+    public static int fibonacciSeries2Way2(int n){
+    // 0 1 1 2 3 5
+    int n0 = 0, n1 = 1, n2 = 0;
+    for (int i = 1; i < n - 1; i++) {
+        n2 = n0 + n1;
+        n0 = n1;
+        n1 = n2;
+    }
+    return n2;
+}
+=================================================
+
+//  public static int[] fibonacciSeries1(int n){
+//        /*
+//          int[] fib;
+//            if (n >= 0)fib = new int[n];
+//            else fib = new int[0];
+//         */
+//    int[] fib = new int[n];
+//
+//        if (n > 0) fib[0] = 0;
+//        if (n > 1) fib[1] = 1;
+//
+////        fib[2] = fib[1] + fib[0];
+////        fib[3] = fib[2] + fib[1];
+////        fib[4] = fib[3] + fib[2];
+//
+//    // n = 4 ==> [0, 1, 1, 2]
+//
+//        for (int i = 0; i < n - 2; i++) {
+//        // n = 4
+//        // i = 0 => 3rd number is found
+//        // i = 1 => 4th number is found
+//        fib[i + 2] = fib[i + 1] + fib[i];
+//    }
+//
+//        return fib;
+//}
+
+
+
+
     /*
         Requirement: TASK 2
     -Create a method called fibonacciSeries2()
@@ -74,7 +118,11 @@ public class Homework22 {
         }
         return newArr[n - 1];
     }
-
+    /*
+    public static int fibonacciSeries2(int n){
+        return fibonacciSeries1(n)[n -1];
+    }
+     */
 
 
     /*
@@ -100,6 +148,7 @@ public class Homework22 {
      */
 
     public static int[] findUniques(int[] a, int[] b) {
+        System.out.println("Task 3");
         String str = "";
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < b.length; j++) {
