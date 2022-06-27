@@ -2,12 +2,14 @@ package homework;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Homework23 {
 
     /*
     Requirement: TASK 1
-    Write a method called as parseData() which takes a String has some keys in {} and values after between }{ and returns a collection that has all the keys and values as entries.
+    Write a method called as parseData() which takes a String has some keys in {}
+     and values after between }{ and returns a collection that has all the keys and values as entries.
     NOTE: The keys should be sorted!
 
     Test Data:
@@ -18,18 +20,20 @@ public class Homework23 {
 
  */
 
-public static Map<Integer, String> parseData(String str){
-    HashMap<Integer, String> cities = new HashMap<>();
-    str= str.replace("{}"," ");
-  String[] a = str.split("");
+    public static TreeMap<String, String> parseDataAsKeyAndValues(String str){
+        TreeMap<String, String> dataTable = new TreeMap<>();
+        while(str.contains("{")){
+            String key = str.substring(str.indexOf("{")+1, str.indexOf("}"));
+            str = str.substring(str.indexOf("}"));
+            String value = str.contains("{") ? str.substring(str.indexOf("}")+1, str.indexOf("{")) : str.substring(1);
+            if(str.contains("{")) str = str.substring(str.indexOf("{"));
+            dataTable.put(key, value);
+        }
+        return dataTable;
+    }
 
 
 
-
-  return a;
-
-
-}
 
 
 
@@ -102,25 +106,38 @@ public static double calculateTotalPrice1(Map<String, Integer> fruits){
 
      */
 
-    public static double calculateTotalPrice2(Map<String, Integer> gross) {
-    double totalPrice = 0;
-    int shoppingCartApple = 0;
-    int shoppingCartMango = 0;
-    Map<String, String> prices = new HashMap<>();
-        prices.put("Apple", "$2.00");
-        prices.put("Orange", "$3.29");
-        prices.put("Mango", "$4.99");
-        prices.put("Pineapple", "$5.25");
-        for (String product : gross.keySet()) {
-        for (int i = 0; i < gross.get(product); i++) {
-            if (product.equals("Apple") && i % 2 != 0)
-                totalPrice += Double.parseDouble(prices.get(product).substring(1)) * 0.50;
-            else if (product.equals("Mango") && i % 4 == 3) continue;
-            else totalPrice += Double.parseDouble(prices.get(product).substring(1));
+    public static double calculateTotalPrice2(Map<String, Integer> quantityOfItems){
+        double totalPrice = 0;
+
+        HashMap<String, String> pricesOfItems = new HashMap<>();
+        pricesOfItems.put("Apple", "$2.00");
+        pricesOfItems.put("Orange", "$3.29");
+        pricesOfItems.put("Mango", "$4.99");
+
+        for (String item :quantityOfItems.keySet()) {
+//            Integer amountOfItem = quantityOfItems.get(item);
+            // mango --> 10 / 4 = 2
+            // mango -->  quantityOfItems.get(item) / 4 = 2
+
+            // Apple --> 11 / 2 = 5
+            // Apple --> 12 / 2 = 6
+            // Apple -->  quantityOfItems.get(item) / 2
+
+            totalPrice += Double.parseDouble(pricesOfItems.get(item).substring(1)) * quantityOfItems.get(item);
+            if (item.equals("Mango")) totalPrice -=
+                    Double.parseDouble(pricesOfItems.get(item).substring(1)) * (int)(quantityOfItems.get(item) / 4);
+            if (item.equals("Apple")) totalPrice -=
+                    (Double.parseDouble(pricesOfItems.get(item).substring(1)) / 2) * (int)(quantityOfItems.get(item) / 2);
         }
+        return totalPrice;
     }
-        return (double) Math.round(totalPrice * 100) / 100;
+
+
+    public static double getNumberAfterPoint(double number, int decimal){
+        int decimalValue = 1 ;
+        for (int i = 0; i < decimal; i++) decimalValue *= 10;
+        return (double) Math.round(number * decimalValue) / decimalValue;
+    }
 }
 
 
-}
