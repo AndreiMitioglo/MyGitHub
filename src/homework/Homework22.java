@@ -187,10 +187,26 @@ Expected Result 4: true
 
  */
     public static boolean isPowerOf3(int n) {
-        if (n == 1) return true;
-        return n % 3 == 0;
+//        if (n == 1) return true;
+//        return n % 3 == 0;
 
+        // 27.0
+        // 27 / 3 = 9
+        // 9 / 3 = 3
+        // 3 / 3 = 1.0
+
+        // 15
+        // 15 / 3 = 5
+        // 5 / 3 = 1
+        if (n < 1 ) return false;
+        double doubleNum = n;
+        while (doubleNum % 3 == 0){
+            doubleNum /= 3;
+        }
+        return doubleNum == 1.0;
     }
+
+
 
 /*
     Requirement: Task 5
