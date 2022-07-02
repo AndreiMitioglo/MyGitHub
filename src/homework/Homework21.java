@@ -93,6 +93,7 @@ public class Homework21 {
 
  */
     public static int findSumNumbers(String s){
+        System.out.println("task 3");
         int sum = 0; // container to hold sum of numbers
         String temp = "0"; // container to hold String format of the numbers
         for (int i = 0; i < s.length(); i++){
@@ -101,7 +102,7 @@ public class Homework21 {
                 sum += Integer.parseInt(temp); // ... then add to the sum of the digits found prior to letter
                 temp = "0"; // reset the String container back to empty
             }
-        }return sum + Integer.parseInt(temp);
+        }return sum ;
     }
 
 

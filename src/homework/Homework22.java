@@ -107,7 +107,7 @@ public class Homework22 {
     public static int fibonacciSeries2(int n) {
         int n0 = 0, n1 = 1, n2 = 0;
         int[] newArr = new int[n];
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i < n-1; i++) {
             newArr[0] = 0;
             newArr[1] = 1;
             newArr[i] = n2;
@@ -157,7 +157,7 @@ public class Homework22 {
         }
         int[] c = new int[str.length()];
         for (int i = 0; i < str.length(); i++) {
-            c[i] = Integer.valueOf(i);
+            c[i] = Integer.valueOf(str);
 
         }
         return c;
@@ -232,6 +232,7 @@ Expected Result 4: true
  */
 
     public static int firstDuplicate(int[] arr) {
+        System.out.println("Task 5");
         String str = "";
         int max = Integer.MIN_VALUE;
         if (arr.length <= 1) return -1;
@@ -267,6 +268,17 @@ Expected Result 4: true
             return newListWithDuplicate.get(newListWithDuplicate.size() - 1);
         }
 }
+  int[] dup = {-1, Integer.MAX_VALUE};
+
+        for (int i = 0; i < nums.length - 1; i++)
+            for (int j = i + 1; j < nums.length; j++)
+                if (nums[i] == nums[j] && j - i < dup[1]){
+                    dup[1] = j - i;
+                    dup[0] = nums[i];
+                }
+        return dup[0];
+    }
+
  */
 
 
